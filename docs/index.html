@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2d2f36" />
+  <title>Dalgona Tracer</title>
+  <meta name="description" content="Trace the shape without cracking the dalgona! Web game." />
+
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🦑 Dalgona Tracer</h1>
+    <div class="status">
+      <div class="timer"><span id="time">60.0</span>s</div>
+      <div class="cracks">Cracks: <span id="cracks">0</span>/3</div>
+      <div class="score">Score: <span id="score">0</span> • Best: <span id="best">0</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label>
+        Player name:
+        <input id="playerName" type="text" maxlength="20" placeholder="enter name" />
+      </label>
+      <button id="saveName" class="btn">Save</button>
+      <button id="newGame" class="btn primary">New Game</button>
+      <button id="shapeBtn" class="btn">Change Shape</button>
+    </section>
+
+    <section class="stage">
+      <canvas id="game" width="800" height="600" aria-label="Game canvas"></canvas>
+    </section>
+
+    <section class="howto">
+      <h2>How to play</h2>
+      <ul>
+        <li>Press on the <b>green dot</b> (or near the outline) to begin, then drag to trace the shape.</li>
+        <li><b>Trace</b> the highlighted shape with your pointer without leaving the safe band.</li>
+        <li>You have <b>60 seconds</b> and <b>3 cracks</b> before failing.</li>
+        <li>You'll see a <b>yellow line</b> showing your progress and <b>red cracks</b> when you stray.</li>
+        <li>Finish faster and more accurately for a higher score.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="cookieBanner" class="cookie-banner hidden" role="dialog" aria-live="polite">
+    <p>This game uses <b>cookies</b> (player name) and <b>localStorage</b> (high score). Continue?</p>
+    <div class="cookie-actions">
+      <button id="acceptCookies" class="btn primary">Accept</button>
+      <button id="declineCookies" class="btn">Decline</button>
+    </div>
+  </div>
+
+  <footer>
+    <small>Static web game. Made for GitHub Pages.</small>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>

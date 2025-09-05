@@ -1,0 +1,95 @@
+:root {
+  --bg: #1f2230;
+  --panel: #2a2d3d;
+  --text: #e8ecf1;
+  --muted: #a7b0c0;
+  --primary: #7dd3fc;
+  --accent: #f59e0b;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 10% 10%, #25283a, var(--bg));
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, #2e3245, #272a3b);
+  border-bottom: 1px solid #3a3e52;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar h1 { margin: 0; font-size: 20px; letter-spacing: .5px; }
+.status { display: flex; gap: 14px; font-size: 14px; color: var(--muted); }
+.status .timer { color: var(--accent); font-weight: 700; }
+.status .cracks { color: var(--danger); }
+
+main { max-width: 1080px; margin: 24px auto; padding: 0 16px; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+.controls label { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); }
+.controls input {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid #3b3f54;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.btn {
+  appearance: none;
+  background: #3a3f55;
+  color: var(--text);
+  border: 1px solid #4a5069;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .06s ease, background .2s ease, box-shadow .2s ease;
+}
+.btn:hover { transform: translateY(-1px); background: #455073; }
+.btn:active { transform: translateY(0); }
+.btn.primary { background: linear-gradient(180deg, #60a5fa, #2563eb); border-color: #3b82f6; }
+
+.stage { background: #171a25; border: 1px solid #2b2f43; border-radius: 12px; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.25) inset; }
+canvas#game { width: 100%; height: auto; display: block; background: radial-gradient(900px 700px at 80% 10%, #1c2030, #0f1322); border-radius: 8px; }
+
+.howto { color: var(--muted); }
+.howto h2 { color: var(--text); }
+
+.cookie-banner {
+  position: fixed;
+  left: 16px; right: 16px; bottom: 16px;
+  background: #0b1020;
+  border: 1px solid #2b3456;
+  color: var(--text);
+  padding: 12px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.cookie-banner.hidden { display: none; }
+.cookie-actions { margin-left: auto; display: flex; gap: 8px; }
+
+footer { text-align: center; color: var(--muted); padding: 20px 0 40px; }
+
+/* HUD flashes */
+.flash {
+  animation: flash .8s ease;
+}
+@keyframes flash {
+  0% { filter: drop-shadow(0 0 0px rgba(239, 68, 68, .6)); }
+  30% { filter: drop-shadow(0 0 12px rgba(239, 68, 68, .9)); }
+  100% { filter: drop-shadow(0 0 0px rgba(239, 68, 68, 0)); }
+}

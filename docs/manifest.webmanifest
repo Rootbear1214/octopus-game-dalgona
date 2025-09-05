@@ -1,0 +1,18 @@
+{
+  "name": "Dalgona Tracer",
+  "short_name": "Dalgona",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f1322",
+  "theme_color": "#2d2f36",
+  "description": "Trace the shape without cracking the dalgona! Offline-capable PWA web game.",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
